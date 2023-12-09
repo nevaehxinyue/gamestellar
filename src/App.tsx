@@ -1,11 +1,12 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     // lg refers to the media screen width > 1024px
     <Grid templateAreas={{ base: `"nav main"`, lg: `"nav nav" "aside main"` }}> 
-      <GridItem area="nav" bg="coral">
-        Nav
+      <GridItem area="nav" bg="white">
+        <NavBar /> 
       </GridItem>
       <Show above="lg">
       <GridItem area="aside" bg="gold">
