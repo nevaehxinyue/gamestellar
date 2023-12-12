@@ -6,14 +6,20 @@ import GenreList from "./components/GenreList";
 function App() {
   return (
     // lg refers to the media screen width > 1024px
-    <Grid templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}> 
+    <Grid
+      templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
+      templateColumns={{
+        base: '1fr',
+        lg: '200px 1fr'
+      }}
+    >
       <GridItem area="nav">
-        <NavBar /> 
+        <NavBar />
       </GridItem>
       <Show above="lg">
-      <GridItem area="aside">
-        <GenreList />
-      </GridItem>
+        <GridItem area="aside" padding={5}>
+          <GenreList />
+        </GridItem>
       </Show>
       <GridItem area="main">
         <GameGrid />
