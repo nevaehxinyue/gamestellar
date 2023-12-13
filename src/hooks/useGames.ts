@@ -17,12 +17,16 @@ export interface Game {
   genres: Genre[];
 }
 
-const useGames = (
-    gameQuery: GameQuery
-) =>
+const useGames = (gameQuery: GameQuery) =>
   useData<Game>(
     "/games",
-    { params: { genres: gameQuery.genre?.id, parent_platforms: gameQuery.platform?.id } },
+    {
+      params: {
+        genres: gameQuery.genre?.id,
+        parent_platforms: gameQuery.platform?.id,
+        ordering: gameQuery.order,
+      },
+    },
     [gameQuery]
   );
 
