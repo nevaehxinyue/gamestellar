@@ -43,6 +43,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 onClick={() => onSelectGenre(genre)}
                 fontSize="xl"
                 variant="ghost"
+                _hover={{ fontWeight: 'bold' }}
               >
                 {genre.name}
               </Button>
