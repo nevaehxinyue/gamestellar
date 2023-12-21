@@ -10,15 +10,17 @@ import {
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/img-url";
 import useGameQueryStore from "../store";
-
+import { useNavigate } from "react-router-dom";
 
 const GenreList = () => {
   const { data, error, isLoading } = useGenres();
-  const selectedGenreId = useGameQueryStore(s => s.gameQuery.genreId);
-  const setSelectedGenreId = useGameQueryStore(s => s.setGenreId);
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
 
   if (error) return null;
   if (isLoading) return <Spinner />;
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -39,10 +41,13 @@ const GenreList = () => {
                 whiteSpace="normal"
                 textAlign="left"
                 fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
-                onClick={() => setSelectedGenreId(genre.id)}
+                onClick={() => {
+                  setSelectedGenreId(genre.id);
+                  navigate("/");
+                }}
                 fontSize="xl"
                 variant="ghost"
-                _hover={{ fontWeight: 'bold' }}
+                _hover={{ fontWeight: "bold" }}
               >
                 {genre.name}
               </Button>

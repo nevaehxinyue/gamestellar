@@ -1,6 +1,10 @@
+
+import Developer from "./Developer";
 import Genre from "./Genre";
 import Platform  from "./Platform";
 import Publisher from "./Publisher";
+import Tag from "./Tag";
+
 
 export default interface Game {
   id: number;
@@ -13,5 +17,10 @@ export default interface Game {
   genres: Genre[];
   rating_top: number;
   publishers: Publisher[];
+  released: string;
+  rating: number;
+  playtime: number;
+  developers: Developer[];
+  tags: Tag[];
 
 }

@@ -13,7 +13,7 @@ const emojiMap: { [key: number]: ImageProps } = {
 };
 
 const Emojis = ({ rating }: Props) => {
-  return <Image {...emojiMap[rating]} marginTop={2}/>;
+  return <Image {...emojiMap[rating]} marginTop={2} />;
 };
 
 export default Emojis;
