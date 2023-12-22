@@ -1,19 +1,20 @@
 import { useParams } from "react-router-dom";
 import useGame from "../hooks/useGame";
 import {
+  Flex,
   GridItem,
   Heading,
   SimpleGrid,
   Spinner,
   VStack,
 } from "@chakra-ui/react";
-import ExpandableText from "../components/ExpandableText";
-import GameAttributes from "../components/GameAttributes";
-import GameTrailer from "../components/GameTrailer";
-import GameScreenshots from "../components/GameScreenshots";
-import GameRatingText from "../components/GameRatingText";
-import GameDatePlaytime from "../components/GameDatePlaytime";
-
+import ExpandableText from "../components/gamedetail/ExpandableText";
+import GameAttributes from "../components/gamedetail/GameAttributes";
+import GameTrailer from "../components/gamedetail/GameTrailer";
+import GameScreenshots from "../components/gamedetail/GameScreenshots";
+import GameRatingText from "../components/gamedetail/GameRatingText";
+import GameDatePlaytime from "../components/gamedetail/GameDatePlaytime";
+import ToggleMenu from "../components/main/ToggleMenu";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -26,6 +27,10 @@ const GameDetailPage = () => {
   if (error || !game) throw error;
 
   return (
+    <>
+    <Flex justifyContent='flex-end'>
+    <ToggleMenu />
+    </Flex>
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5} marginTop={5}>
       <GridItem>
         <VStack spacing="4" align="start">
@@ -41,6 +46,7 @@ const GameDetailPage = () => {
         <GameScreenshots gameSlug={game.slug} />
       </GridItem>
     </SimpleGrid>
+    </>
   );
 };
 

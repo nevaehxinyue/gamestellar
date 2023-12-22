@@ -1,23 +1,23 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/navbar/NavBar";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
-import GenreList from "../components/GenreList";
-import TopGames from "../components/TopGames";
+import GenreList from "../components/sidenavbar/GenreList";
+import TopGamesNav from "../components/sidenavbar/TopGamesNav";
 
 const Layout = () => {
   return (
     <div>
       <NavBar />
       <Grid
-        templateAreas={{ base: `"main"`, lg: ` "aside main"` }}
+        templateAreas={{ base: `"main"`, lg: `"main"`, xl: ` "aside main"` }}
         templateColumns={{
           base: "1fr",
-          lg: "300px 1fr",
+          xl: "300px 1fr",
         }}
       >
-        <Show above="lg">
+        <Show above="xl">
           <GridItem area="aside" padding={5}>
-            <TopGames />
+            <TopGamesNav />
             <GenreList />
           </GridItem>
         </Show>

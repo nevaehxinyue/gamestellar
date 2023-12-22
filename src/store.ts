@@ -6,6 +6,7 @@ interface GameQuery {
   platformId?: number;
   sortOrder?: string;
   searchText?: string;
+  year?: number;
 }
 
 interface GameQueryStore {
@@ -14,20 +15,23 @@ interface GameQueryStore {
   setGenreId: (genreId: number) => void;
   setPlatformId: (platformId: number) => void;
   setSortOrder: (sortOrder: string) => void;
+  setYear: (year: number) => void;
+  
 }
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
   gameQuery: {},
   setSearchText: (searchText) => set(() => ({ gameQuery: { searchText } })),
   setGenreId: (genreId) =>
-    set((store) => ({ gameQuery: { ...store.gameQuery, genreId } })),
+    set(() => ({ gameQuery: {  genreId } })),
   setPlatformId: (platformId) =>
     set((store) => ({ gameQuery: { ...store.gameQuery, platformId } })),
   setSortOrder: (sortOrder) =>
     set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
+  setYear: (year) => set(() => ({ gameQuery: { year }}))
 }));
 
-if(process.env.NODE_ENV === 'development') 
-    mountStoreDevtool('GameQuery Store', useGameQueryStore );
+if (process.env.NODE_ENV === "development")
+  mountStoreDevtool("GameQuery Store", useGameQueryStore);
 
 export default useGameQueryStore;

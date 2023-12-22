@@ -1,6 +1,6 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
-import Emojis from "./Emojis";
-import Game from "../entities/Game";
+import Emojis from "../main/Emojis";
+import Game from "../../entities/Game";
 
 interface Props {
   game: Game;
@@ -27,7 +27,7 @@ const GameRatingText = ({ game }: Props) => {
         {ratingText}
       </Text>
       <Text fontWeight="bold" fontSize="lg">
-      ({game.rating})
+        ({game.rating})
       </Text>
       <Box marginBottom={2}>
         <Emojis rating={game.rating_top}></Emojis>

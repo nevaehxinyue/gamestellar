@@ -1,6 +1,6 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
-import formattedDate from "../services/date-conversion";
-import Game from "../entities/Game";
+import formattedDate from "../../services/date-conversion";
+import Game from "../../entities/Game";
 
 interface Props {
   game: Game;
@@ -8,7 +8,7 @@ interface Props {
 
 const GameDatePlaytime = ({ game }: Props) => {
   return (
-    <HStack spacing={4} letterSpacing={2} >
+    <HStack spacing={4} letterSpacing={2}>
       <Box
         paddingX="6px"
         textAlign="center"
@@ -17,12 +17,11 @@ const GameDatePlaytime = ({ game }: Props) => {
         color="black"
         borderWidth="2px"
         fontSize="sm"
-        
       >
         {formattedDate(game.released)}
       </Box>
 
-      <Text >Average Playtime: {game.playtime} hours</Text>
+      <Text>Average Playtime: {game.playtime} hours</Text>
     </HStack>
   );
 };

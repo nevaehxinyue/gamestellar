@@ -1,7 +1,7 @@
 import { SimpleGrid, Text, Wrap, WrapItem } from "@chakra-ui/react";
-import CriticScore from "./CriticScore";
+import CriticScore from "../main/CriticScore";
 import DefinitionItem from "./DefinitionItem";
-import Game from "../entities/Game";
+import Game from "../../entities/Game";
 
 interface Props {
   game: Game;
@@ -37,11 +37,12 @@ const GameAttributes = ({ game }: Props) => {
       </SimpleGrid>
       <DefinitionItem term="Tags">
         <Wrap>
-          {game.tags.map((tag, index) =>
-             (
-              <WrapItem key={tag.id}>{tag.name}{index < game.tags.length - 1 ? ',' : ''}</WrapItem>
-            ) 
-          )}
+          {game.tags.map((tag, index) => (
+            <WrapItem key={tag.id}>
+              {tag.name}
+              {index < game.tags.length - 1 ? "," : ""}
+            </WrapItem>
+          ))}
         </Wrap>
       </DefinitionItem>
     </>

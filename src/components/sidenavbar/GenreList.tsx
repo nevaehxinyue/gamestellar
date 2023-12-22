@@ -7,9 +7,9 @@ import {
   ListItem,
   Spinner,
 } from "@chakra-ui/react";
-import useGenres from "../hooks/useGenres";
-import getCroppedImageUrl from "../services/img-url";
-import useGameQueryStore from "../store";
+import useGenres from "../../hooks/useGenres";
+import getCroppedImageUrl from "../../services/img-url";
+import useGameQueryStore from "../../store";
 import { useNavigate } from "react-router-dom";
 
 const GenreList = () => {
@@ -45,7 +45,7 @@ const GenreList = () => {
                   setSelectedGenreId(genre.id);
                   navigate("/");
                 }}
-                fontSize="xl"
+                fontSize="lg"
                 variant="ghost"
                 _hover={{ fontWeight: "bold" }}
               >
