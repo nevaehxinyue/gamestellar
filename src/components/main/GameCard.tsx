@@ -7,6 +7,8 @@ import {
   Heading,
   Img,
   Text,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import Game from "../../entities/Game";
 import PlatformIconList from "./PlatformIconList";
@@ -55,7 +57,7 @@ const GameCard = ({ game }: Props) => {
               justifyContent="space-between"
               borderBottom="1px solid"
               borderColor="gray.500"
-              fontSize='small'
+              fontSize="small"
             >
               <Text fontWeight="bold" color="gray.500">
                 Release data:{" "}
@@ -67,21 +69,23 @@ const GameCard = ({ game }: Props) => {
               justifyContent="space-between"
               borderBottom="1px solid"
               borderColor="gray.500"
-              fontSize='small'
+              fontSize="small"
             >
               <Text fontWeight="bold" color="gray.500">
                 Genres:
               </Text>
               <HStack fontWeight="semibold">
-                {game.genres.map((genre, index) => (
-                  <React.Fragment key={genre.id}>
-                    {index < game.genres.length - 1 ? (
-                      <Text textDecoration="underline">{genre.name},</Text>
-                    ) : (
-                      <Text textDecoration="underline">{genre.name}</Text>
-                    )}
-                  </React.Fragment>
-                ))}
+                <Wrap>
+                  {game.genres.map((genre, index) => (
+                    <WrapItem key={genre.id}>
+                      {index < game.genres.length - 1 ? (
+                        <Text textDecoration="underline">{genre.name}</Text>
+                      ) : (
+                        <Text textDecoration="underline">{genre.name}</Text>
+                      )}
+                    </WrapItem>
+                  ))}
+                </Wrap>
               </HStack>
             </Flex>
           </Box>
