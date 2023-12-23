@@ -3,10 +3,12 @@ import NavBar from "../components/navbar/NavBar";
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import GenreList from "../components/sidenavbar/GenreList";
 import TopGamesNav from "../components/sidenavbar/TopGamesNav";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Layout = () => {
   return (
     <div>
+      <ScrollToTop />
       <NavBar />
       <Grid
         templateAreas={{ base: `"main"`, lg: `"main"`, xl: ` "aside main"` }}

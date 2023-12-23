@@ -8,16 +8,18 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes.tsx";
 
-
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    {/* UI by Chakra - Color(Light/Dark) configuration */}
     <ChakraProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      {/* React Query Configuration including setting React Query Devtools› */}
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
         <ReactQueryDevtools />
+        {/* Routing configuration by react-router-dom */}
+        <RouterProvider router={router} />
       </QueryClientProvider>
     </ChakraProvider>
   </React.StrictMode>
