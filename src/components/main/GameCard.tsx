@@ -71,18 +71,17 @@ const GameCard = ({ game }: Props) => {
               borderColor="gray.500"
               fontSize="small"
             >
-              <Text fontWeight="bold" color="gray.500">
+              <Text  marginRight={2} fontWeight="bold" color="gray.500">
                 Genres:
               </Text>
+              <Text></Text>
               <HStack fontWeight="semibold">
                 <Wrap>
                   {game.genres.map((genre, index) => (
-                    <WrapItem key={genre.id}>
-                      {index < game.genres.length - 1 ? (
-                        <Text textDecoration="underline">{genre.name}</Text>
-                      ) : (
-                        <Text textDecoration="underline">{genre.name}</Text>
-                      )}
+                    <WrapItem  key={genre.id}>
+                      <Text textDecoration='underline'>{genre.name}</Text>
+                      {index < game.genres.length - 1 &&  <Text as="span">, </Text>
+                      }
                     </WrapItem>
                   ))}
                 </Wrap>
