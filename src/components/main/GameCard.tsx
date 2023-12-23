@@ -55,6 +55,7 @@ const GameCard = ({ game }: Props) => {
               justifyContent="space-between"
               borderBottom="1px solid"
               borderColor="gray.500"
+              fontSize='small'
             >
               <Text fontWeight="bold" color="gray.500">
                 Release data:{" "}
@@ -66,6 +67,7 @@ const GameCard = ({ game }: Props) => {
               justifyContent="space-between"
               borderBottom="1px solid"
               borderColor="gray.500"
+              fontSize='small'
             >
               <Text fontWeight="bold" color="gray.500">
                 Genres:

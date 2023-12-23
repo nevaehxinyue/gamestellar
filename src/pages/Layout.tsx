@@ -14,7 +14,7 @@ const Layout = () => {
         templateAreas={{ base: `"main"`, lg: `"main"`, xl: ` "aside main"` }}
         templateColumns={{
           base: "1fr",
-          xl: "300px 1fr",
+          xl: "220px 1fr",
         }}
       >
         <Show above="xl">
