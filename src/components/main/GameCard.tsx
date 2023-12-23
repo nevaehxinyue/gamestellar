@@ -17,7 +17,6 @@ import getCroppedImageUrl from "../../services/img-url";
 import Emojis from "./Emojis";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import React from "react";
 
 interface Props {
   game: Game;
