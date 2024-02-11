@@ -19,7 +19,7 @@ Built with React and TypeScript by Vite. I designed the UI with Chakra(https://c
 </div>
 <br>
       
-Hope you like it ~
+Have fun with it!
 
 
 
