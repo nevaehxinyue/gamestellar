@@ -6,7 +6,7 @@ import TopGameCategory from "./TopGameCategory";
 
 const topGameCategories = [
   {
-    year: new Date().getFullYear(),
+    year: 2023,
     text: "Best of the Year",
     Icon: GiLaurelsTrophy,
   },

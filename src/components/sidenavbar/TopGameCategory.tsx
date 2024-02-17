@@ -47,7 +47,7 @@ const TopGameCategory = ({ year, text, Icon }: Props) => {
           _hover={{ fontWeight: "bold" }}
           onClick={() => {
             setYear(year);
-            setSortOrder("-metacritic");
+            setSortOrder("-rating");
             navigate("/");
           }}
           fontWeight={fontWeight}
